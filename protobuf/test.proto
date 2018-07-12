@@ -1,0 +1,29 @@
+package Test;
+
+option java_package = "com.sumscope";
+option java_outer_classname = "Test";
+
+
+message News { 
+  required string title = 1;
+  required string author = 2;
+  required string date = 3;
+  required string content = 4;
+  optional int32 id=5;
+}
+
+message Faq { 
+  required bytes question = 1;
+  optional bytes answer = 2;
+}
+
+message Hello { 
+  optional bytes content = 1;
+  optional int32 i=2;
+  optional int64 l=3;
+  optional float f=4;
+  optional string str=5;
+  repeated string str2=6;
+  repeated int32 num=7;
+  optional News news=8;
+}
