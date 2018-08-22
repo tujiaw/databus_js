@@ -204,7 +204,7 @@
       this.bodysize = bodysize;
     };
     pack.prototype.getIsZip = function () {
-      return (this.codeinfo & 0x1) === 1;
+      return (this.codeinfo & 0x2) === 2;
     };
     pack.prototype.getType = function () {
       return this.type;
