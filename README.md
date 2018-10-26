@@ -62,3 +62,15 @@ pbjs -t json file1.proto file2.proto > bundle.json
 > 原因是：react native中protobufjs没办法直接读取proto文件
 
 
+# 支持IE11
+## 先将ie升级到ie11；
+打开ie，菜单栏->帮助-> Internet Explorer 9中的新功能
+
+## 更新补丁  
+http://www.microsoft.com/en-us/download/details.aspx?id=45134  （32位）  
+http://www.microsoft.com/zh-CN/download/details.aspx?id=45154 （64位）  
+
+## 代码文件替换
+使用ie11目录下的三个文件替换上级目录的三个文件  
+1> ie11下面的文件部分代码是经过babel转码后的  
+2> webtest.html中引入了polyfill.min.js脚本  
