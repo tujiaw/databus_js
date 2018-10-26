@@ -24,7 +24,7 @@
 var openBtn = document.getElementById('open');
 var helloBtn = document.getElementById('hello');
 cbus.setProtoFileDir('/databus/protobuf');
-cbus.setHeartBeatIntervalSecond(10000);
+cbus.setHeartBeatIntervalSecond(3);
 cbus.setPublish(function (data) {
   appendLog(data);
 });
