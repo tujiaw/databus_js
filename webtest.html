@@ -17,9 +17,11 @@
 <body>
   <button id="open" type="button">open</button>
   <button id="hello" type="button">hello</button>
+  <button id="tradeLogin" type="button">trade login</button>
   <script>
     var openBtn = document.getElementById('open');
     var helloBtn = document.getElementById('hello');
+    var tradeLogin = document.getElementById('tradeLogin');
     cbus.setProtoFileDir('/databus/protobuf');
     cbus.setPublish((data) => {
       appendLog(data);
@@ -49,6 +51,18 @@
       }).catch(err => {
         appendLog(err);
       })
+    }
+
+    tradeLogin.onclick = function() {
+      cbus.post('Trade.LoginReq', {
+          userid: 'admin', 
+          passwd: 'admin',
+          instruments: ['i1810']
+        }).then((json) => {
+          console.log('trade login result', json);
+        }).catch(err => {
+          console.log('trade login error', err);
+        })
     }
 
     function appendLog(msg) {
