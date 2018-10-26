@@ -229,7 +229,7 @@ var Observer = function () {
       this.bodysize = bodysize;
     };
     pack.prototype.getIsZip = function () {
-      return (this.codeinfo & 0x1) === 1;
+      return (this.codeinfo & 0x2) === 0x2;
     };
     pack.prototype.getType = function () {
       return this.type;
@@ -407,7 +407,7 @@ var CBusCore = function () {
     this.ws = undefined; // WebSocket
     this.enableReconnect = false; // 是否可以进行重连
     this.pushDataFactory = undefined; // 处理推送的消息
-    this.PROTO_FILE_DIR = '/protobuf/'; // proto文件所在目录
+    this.PROTO_FILE_DIR = './protobuf'; // proto文件所在目录
     this.settings = {
       onConnectSuccess: undefined,
       onConnectError: undefined,
